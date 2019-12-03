@@ -1,1 +1,133 @@
+Tell us what your idea is. 
+________________________________________
+Describe in 250 words what the feature or service will do and how you’ll use Machine Learning to push the bar:
+
+ Traconcrete allows a Google user to perform a text search while targeting the language of the content they want to find. He enters the search data in the language he masters but the search results he obtains are in the language he does not master (but targets) and Google then translates these results into the language he masters (the language of his search). A French-speaking Internet user can enter his research data in French but obtain research results in English (originally) but automatically translated for him. 
+Currently, on Google, it is possible to access a web page in English and translate it into French, but only the user has to use certain keywords in the search bar.
+With Traconcrete's functionality, searches will be more optimal and their results will adapt to the client's language as soon as the search results are displayed, i.e. before the user has even clicked on the link that brings the web page of the search result.
+Traconcrete will provide access to important information buried in hard-to-find forums when you don't know the people you are talking to or the name of the forum.
+It will allow a wide sharing of knowledge between the least advanced regions of the world on certain technologies and the best equipped by breaking the language barrier.
+Machine learning will allow the recognition of the language mastered by the user and the translation of the search result (from the targeted language to the mastered language).
+Tell us how you plan on bringing it to life. 
+________________________________________
+Describe where your project is, how you could use Google’s help in the endeavor, and how you plan on using On-Device ML technology to bring the concept to life. The best submissions have a great idea combined with a concrete path of where you plan on going, which should include: 
+•	(1) any potential sample code you’ve already written, 
+Currently, my concept is in its ideation phase, however, I am already in the process of researching possible codes that could lead to this objective.
+
+•	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+•	
+•	<html>
+•	
+•	<head>
+•	    
+•		<title>Traduction</title>
+•		
+•	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+•	
+•	<script type="text/javascript">
+•	google.load("language", "1");
+•	
+•	function Langue() //Fonction pour trouver la langue
+•		{
+•		var texteatraduire = document.getElementById('texteatraduire').value;
+•		var languetraduite = document.getElementById('languetraduite').value;
+•		var languedorigine = document.getElementById('languedorigine').value;
+•		
+•		var text = texteatraduire;
+•		google.language.detect(text, function(result) //API Google
+•		{
+•			if (!result.error) 
+•				{
+•				var language = 'unknown';
+•				for (l in google.language.Languages) 
+•					{
+•					if (google.language.Languages[l] == result.language) 
+•						{
+•						language = l;
+•						break;
+•						}
+•					}
+•					document.getElementById('informations').innerHTML = "This text is in "+l; //Ecriture de la langue
+•				}
+•			});
+•		}
+•		
+•	function Traduction() 
+•		{
+•		var texteatraduire = document.getElementById('texteatraduire').value;
+•		var languetraduite = document.getElementById('languetraduite').value;
+•		var languedorigine = document.getElementById('languedorigine').value;
+•	
+•		if (languedorigine == languetraduite) //On vérifie si les deux langues ne sont pas identiques
+•			{
+•			document.getElementById('informations').innerHTML = "La langue du texte et celle dans laquelle il doit être traduit sont identiques.";
+•			}
+•		else
+•			{
+•			google.language.translate(texteatraduire, languedorigine, languetraduite, 
+•			function(result) 
+•				{
+•				if (!result.error) 
+•					{
+•					var container = document.getElementById("textetraduit");
+•					container.innerHTML = result.translation;
+•					document.getElementById('informations').innerHTML = "Le texte à été traduit.";
+•					}
+•				});
+•			}
+•		}
+•	
+•	</script>
+•	
+•	</head>
+•	
+•	<body>
+•	
+•	<select id="languedorigine">
+•	<option value="fr">Francais</option> <!--Vous pouvez rajouter d'autres langues !-->
+•	<option value="en">English</option>
+•	<option value="de">German</option>
+•	<option value="es">Español</option>
+•	</select>
+•	
+•	<select id="languetraduite">
+•	<option value="fr">Francais</option>
+•	<option value="en">English</option>
+•	<option value="de">German</option>
+•	<option value="es">Español</option>
+•	</select>
+•	
+•	<div id="informations"></div>
+•	<textarea id="texteatraduire"></textarea>
+•	<div id="textetraduit"></div>
+•	
+•	<a href="javascript:Traduction()">Traduire</a> <a href="javascript:Langue()">Touver la langue</a>
+•	
+•	</body>
+•	
+•	</html>
+•	
+
+•	(2) a list of the ways you could use Google’s help, 
+I hope to get from Google: Better working conditions, including 
+- high-speed Internet access
+  -more efficient computer equipment 
+                 -mentoring of  its engineers to acquire greater expertise 
+- Include this application in Google's search engine
+                 -hosting of this application on Playstore
+- Promote this solution
+
+
+•	(3) as well as the timeline on how you plan on bringing it to life by May 1, 2020. 
+
+28 November to 15 January 2020, DOCUMENTATION period and start of TRACONCRETE development
+16 January-15 March 2020: training period by experts, development and testing of functionality (with a reduced audience)
+16 March-31 March 2020: Improvement and online release of the beta version (general public)  
+April 20, 2020 : Final version ready
+
+Tell us about you. 
+________________________________________
+ A great idea is just one part of the equation; we also want to learn a bit more about you. Share with us some of your other projects so we can get an idea of how we can assist you with your project. 
+
+I am the project manager of the main winning team of the hackathon organized in December 2018 by Internews in partnership with the European Union on human rights in the Democratic Republic of Congo. We proposed an Android wear application that allows the police to rescue people in danger with a connected watch and we developed it. I wish to become one of the pioneers of Machine Learning in my country, the DRC, by acquiring greater expertise in this field in order to serve the emergence of the great digital potential that Congo-Kinshasa has for the global interest.
 
